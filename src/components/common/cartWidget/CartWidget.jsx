@@ -6,7 +6,7 @@ export const CartWidget = () => {
   return (
     <div className="cart-widget">
       <FaShoppingCart size={24} />
-      {cartCount > 0 ? <span className="cart-count">{cartCount}</span> : null}
+      {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
     </div>
   );
 };

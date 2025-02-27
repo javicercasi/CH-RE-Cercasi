@@ -3,3 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(71, 23, 90, 0.632),
+      rgba(255, 255, 255, 0.737)
+    ),
+    url("https://res.cloudinary.com/dzojxemgm/image/upload/v1740689565/10_xub5lf.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
