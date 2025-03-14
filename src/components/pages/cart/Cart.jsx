@@ -10,7 +10,7 @@ import {
   Box,
 } from "@mui/material";
 import { FaTrash, FaShoppingCart } from "react-icons/fa";
-import "./Cart.css"; // Importamos los estilos
+import "./cart.css"; // Importamos los estilos
 
 const Cart = () => {
   const { cart, resetCart, removeByID, getTotalAmount } =
