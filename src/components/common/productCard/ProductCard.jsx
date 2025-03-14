@@ -4,15 +4,17 @@ import {
   CardContent,
   Typography,
   Button,
+  Grid,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./productCard.css";
+import Counter from "../counter/Counter";
 
 export const ProductCard = ({ item }) => {
   return (
     <Card className="product-card">
       <CardMedia component="img" image={item.imageUrl} alt={item.title} />
-      <CardContent>
+      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <Typography variant="h6" component="h3">
           {item.title}
         </Typography>
@@ -24,9 +26,7 @@ export const ProductCard = ({ item }) => {
             Ver detalle
           </Button>
         </Link>
-        <Button variant="outlined" color="secondary">
-          Añadir al carrito
-        </Button>
+        <Counter item={item} />
       </CardContent>
     </Card>
   );

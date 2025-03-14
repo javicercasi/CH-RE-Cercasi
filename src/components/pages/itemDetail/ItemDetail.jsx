@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { products } from "../../../products";
 import { useParams } from "react-router-dom";
 import {
   Grid2 as Grid,
@@ -10,14 +9,24 @@ import {
   Button,
 } from "@mui/material";
 import "./itemDetail.css";
+import Counter from "../../common/counter/Counter";
+import { db } from "../../../firebaseConfig";
+import { collection, getDoc, doc } from "firebase/firestore";
 
 const ItemDetail = () => {
   const [item, setItem] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
-    const product = products.find((elemento) => elemento.id === id);
-    setItem(product);
+    let refCollection = collection(db, "products");
+    let refDoc = doc(refCollection, id);
+    const getProduct = getDoc(refDoc);
+
+    getProduct
+      .then((res) => {
+        setItem({ id: res.id, ...res.data() });
+      })
+      .catch((error) => console.log(error));
   }, [id]);
 
   return (
@@ -40,9 +49,7 @@ const ItemDetail = () => {
             <Typography variant="h6" color="secondary">
               ${item.price}
             </Typography>
-            <Button variant="contained" color="secondary">
-              Añadir al carrito
-            </Button>
+            <Counter item={item} />
           </CardContent>
         </Card>
       </Grid>

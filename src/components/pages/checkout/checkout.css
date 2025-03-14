@@ -1,0 +1,24 @@
+.checkout-container {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.checkout-paper {
+  padding: 3rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.checkout-message {
+  margin-top: 16px;
+}
+
+.checkout-input {
+  margin-bottom: 1.5rem;
+}
+
+.checkout-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
